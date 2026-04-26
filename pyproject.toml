@@ -1,0 +1,14 @@
+[project]
+name = "python-cli-template"
+version = "0.1.0"
+description = "Modernes Python CLI Template"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [ { name = "Your Name", email = "you@example.com" } ]
+
+[project.scripts]
+python-cli-template = "python_cli.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
