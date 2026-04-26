@@ -57,7 +57,9 @@ make test
 
 3. Run the CLI:
 
-   python -m python_cli --help
+```bash
+python -m python_cli --help
+```
 
 What this template includes
 
