@@ -1,22 +1,22 @@
 """
-Ein kleines Beispiel für eine CLI-Anwendung.
+A small example of a CLI application.
 
-Beschreibung:
-  Dieses Modul implementiert eine einfache Kommandozeilenoberfläche mit
-  `argparse`. Es dient als Ausgangspunkt für moderne Python-CLI-Projekte.
+Description:
+    This module implements a simple command-line interface using `argparse`.
+    It serves as a starting point for modern Python CLI projects.
 
-Argumente (Beispiel):
-  --name NAME      : Optionaler Name, wird zur Begrüßung verwendet.
-  --verbose        : Aktiviert ausführliche Ausgabe.
-  --version        : Zeigt die Versionsnummer an und beendet das Programm.
+Arguments (example):
+    --name NAME      : Optional name used for a greeting.
+    --verbose        : Enables verbose output.
+    --version        : Prints the version and exits.
 
-Ausführung (Beispiel):
-  python -m python_cli --name Alice
+Execution (example):
+    python -m python_cli --name Alice
 
-Erklärung:
-  `main()` parst die Argumente und führt die gewünschte Aktion aus. Diese
-  Vorlage ist bewusst einfach gehalten und sollte an projekt-spezifische
-  Anforderungen angepasst werden.
+Explanation:
+    `main()` parses the arguments and performs the requested action. This
+    template is intentionally simple and should be adapted to project-specific
+    requirements.
 
 Author: Your Name
 Created: 2026-04-26

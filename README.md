@@ -1,38 +1,43 @@
+
 # Python CLI Template
 
-Dieses Repository ist ein modernes, leichtgewichtiges Template für Python-CLI-Projekte.
+This repository is a modern, lightweight template for Python CLI projects.
 
-Kurz: Klonen, anpassen, loslegen.
+Quick start
 
-Schnellstart
-
-1. Klone das Template lokal:
+1. Clone the template locally:
 
    git clone https://github.com/yourname/python-cli-template.git my-project
    cd my-project
 
-2. Erstelle ein virtuelles Environment und installiere Abhängigkeiten:
+2. Create a virtual environment and install dependencies:
 
    python -m venv .venv
    source .venv/bin/activate
    pip install -e .
 
-3. Ausführen:
+3. Run the CLI:
 
    python -m python_cli --help
 
-Was dieses Template enthält
+What this template includes
 
-- Modernes `pyproject.toml` (PEP 621)
-- Paketstruktur unter `src/`
-- Einfache `argparse`-basierte CLI in `src/python_cli/cli.py`
+- A modern `pyproject.toml` (PEP 621)
+- `src/` package layout
+- A simple `argparse`-based CLI in `src/python_cli/cli.py`
 - `README.md`, `LICENSE`, `.gitignore`
-- Grundlegende `tests/` sowie eine GitHub Actions CI-Konfiguration
+- Basic `tests/` and a GitHub Actions CI workflow
 
-Anpassen
+Extending with submodules
 
-Ersetze `python-cli-template` und Autorenangaben in `pyproject.toml` und in den Docstrings.
+This template includes a `modules` subpackage at `src/python_cli/modules`.
+Place additional submodules there (for example, `example.py`). They can be
+imported as `python_cli.modules.example` and hooked into the CLI.
 
-Lizenz
+Customization
+
+Replace `python-cli-template` and author information in `pyproject.toml` and the module docstrings.
+
+License
 
 MIT

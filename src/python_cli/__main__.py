@@ -1,5 +1,5 @@
 """
-Entrypoint für `python -m python_cli`.
+Entrypoint for `python -m python_cli`.
 
 Author: Your Name
 Created: 2026-04-26

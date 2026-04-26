@@ -1,4 +1,4 @@
-"""Grundlegende Tests für das CLI-Template."""
+"""Basic tests for the CLI template."""
 
 import importlib
 
