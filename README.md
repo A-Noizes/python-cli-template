@@ -7,26 +7,34 @@ Quick start
 
 1. Clone the template locally:
 
+   ```bash
    git clone https://github.com/yourname/python-cli-template.git my-project
    cd my-project
+   ```
 
 2. Create a Conda environment and install dependencies:
 
-   # recommended (uses the Makefile shortcuts):
+   ##### recommended (uses the Makefile shortcuts):
+   ```bash
    make env-create
    conda activate python-cli-template
    make install
+   ```
 
-   # direct alternative:
-   # conda env create -f environment.yml
-   # conda activate python-cli-template
-   # pip install -e .
+   ##### direct alternative:
+   ```bash
+   conda env create -f environment.yml
+   conda activate python-cli-template
+   pip install -e 
+   ```
 
 If you prefer a virtualenv instead of Conda, you can still use:
 
+   ```bash
    python -m venv .venv
    source .venv/bin/activate
    pip install -e .
+   ```
 
 Makefile shortcuts
 
