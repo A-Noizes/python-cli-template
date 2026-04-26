@@ -10,7 +10,13 @@ Quick start
    git clone https://github.com/yourname/python-cli-template.git my-project
    cd my-project
 
-2. Create a virtual environment and install dependencies:
+2. Create a Conda environment and install dependencies:
+
+   conda env create -f environment.yml
+   conda activate python-cli-template
+   pip install -e .
+
+If you prefer a virtualenv instead of Conda, you can still use:
 
    python -m venv .venv
    source .venv/bin/activate
