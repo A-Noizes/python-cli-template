@@ -1,19 +1,25 @@
 PYTHON=python
-ENV_FILE=environment.yml
+UV=uv
+TOML=pyproject.toml
+MODULE=__init__.py
 
-.PHONY: env-create env-update install test run
-
-env-create:
-	conda env create -f $(ENV_FILE)
-
-env-update:
-	conda env update -f $(ENV_FILE) --prune
+.PHONY: install init test run run-module venv
 
 install:
-	$(PYTHON) -m pip install -e .
+	$(UV) pip install -r $(TOML)
 
 test:
-	pytest -q
+	pytest -q 
+
+init:
+	$(UV) pip install -r $(TOML)
+
+venv:
+	$(UV) venv .
 
 run:
-	$(PYTHON) -m python_cli
+	$(UV) sync
+	$(UV) run python-cli-template
+
+run-module:
+	$(UV) run python -m src.python_cli.modules.$(MODULE)
