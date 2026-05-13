@@ -1,26 +1,26 @@
 """
-A small example of a CLI application.
+{{ project_name }}.
 
 Description:
-    This module implements a simple command-line interface using `argparse`.
-    It serves as a starting point for modern Python CLI projects.
+    {{ description | default('A advanced CLI Python application template with a short
+module-level docstring describing purpose and usage.') }}
 
-Arguments (example):
+Arguments:
     --name NAME      : Optional name used for a greeting.
     --verbose        : Enables verbose output.
     --version        : Prints the version and exits.
 
-Execution (example):
-    python -m python_cli --name Alice
+Execution:
+    python -m {{ project_name }} --name Alice
 
 Explanation:
     `main()` parses the arguments and performs the requested action. This
     template is intentionally simple and should be adapted to project-specific
     requirements.
 
-Author: Your Name
-Created: 2026-04-26
-Version: 0.1.0
+Author: {{ author }}
+Created: {{ created }}
+Version: {{ version }}
 """
 
 from __future__ import annotations
@@ -34,10 +34,11 @@ from . import __version__
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="python-cli-template",
-        description="Beispiel-CLI (Template)",
+        prog="{{ project_name | default('A advanced CLI Python application template with a short
+module-level docstring describing purpose and usage.') }}",
+        description="{{ short_description | default('A CLI Python application template.') }}",
     )
-    parser.add_argument("--name", type=str, help="Name für die Begrüßung", default=None)
+    parser.add_argument("--name", type=str, help="Name für die Begrüßung", default="{{ author }}")
     parser.add_argument("--verbose", action="store_true", help="Ausführliche Ausgabe")
     parser.add_argument("--version", action="store_true", help="Version anzeigen und beenden")
     return parser

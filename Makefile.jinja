@@ -1,9 +1,8 @@
 PYTHON=python
 UV=uv
 TOML=pyproject.toml
-MODULE=__init__.py
 
-.PHONY: install init test run run-module venv
+.PHONY: install test venv init run run-module
 
 install:
 	$(UV) pip install -r $(TOML)
@@ -11,15 +10,16 @@ install:
 test:
 	pytest -q 
 
-init:
-	$(UV) pip install -r $(TOML)
-
 venv:
 	$(UV) venv .
 
+init: 
+	$(UV) venv .
+	$(UV) pip install -r $(TOML)
+
 run:
 	$(UV) sync
-	$(UV) run python-cli-template
+	$(UV) run {{ terminal_command }}
 
 run-module:
 	$(UV) run python -m src.python_cli.modules.$(MODULE)
