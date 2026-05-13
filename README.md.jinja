@@ -1,4 +1,4 @@
-# {{project_name}}
+# {{ project_name }}
 
 {{description}}
 
@@ -6,32 +6,51 @@ Quick start
 
 1. Initialize the project
 
-Run the Makefile target to prepare a local development environment and install the project and its dependencies:
+Use the Makefile shortcuts or Conda commands below to set up the development environment and install the package:
+
+Create the Conda environment from the provided manifest:
+
+```bash
+make env-create
+```
+
+Activate the environment and install the package in editable mode:
 
 ```bash
 make init
 ```
 
-This command creates a local virtual environment (commonly `.venv`), installs the package and all declared Python dependencies into that environment, and configures the workspace for development and testing. 
+What these steps do
 
-Makefile shortcuts
+- `make env-create` creates a Conda environment using `environment.yml`.
+- `make init` activates the environment and installs the package and declared dependencies into it (equivalent to `pip install .` inside the activated environment).
 
-Use `make <target>` from the repository root. Common targets include:
 
-- `make init`       — initialize project and set up `.venv`
-- `make install`    — install dependencies (using UV or pip as configured)
-- `make test`       — run the test suite with `pytest`
-- `make venv`       — create/refresh the `.venv` virtual environment
-- `make run`        — run the CLI in development mode (`uv python -m python_cli`)
-- `make run-module` — run a specific module: `make run-module MODULE=module_name`
+
+Common Makefile targets
+
+Run `make <target>` from the repository root. Important targets:
+
+- `make env-create`  — create Conda environment from `environment.yml`
+- `make env-update`  — update Conda environment (uses `--prune`)
+- `make init`        — install the package into the active environment
+- `make test`        — run the test suite with `pytest`
+- `make run`         — activate env and run CLI (`python -m <project_name>`)
+- `make run-module`  — run a specific module: `make run-module MODULE=module_name`
 
 Examples
 
+Create environment and install the package:
+
 ```bash
 make env-create
-make install
+make init
+```
+
+Run tests:
+
+```bash
 make test
-make run-module MODULE=module
 ```
 
 Run the CLI
@@ -42,6 +61,7 @@ To run the packaged CLI (release mode):
 ./bin/{{project_name}} --help
 ```
 
+
 Project structure overview
 
 - `src/` — package sources (main CLI and modules)
@@ -50,9 +70,19 @@ Project structure overview
 
 Extending with submodules
 
-Add additional modules to `src/{{project_name}}/modules`. These can be imported as `python_cli.modules.<name>` and integrated into the CLI.
+Add additional modules to `src/{{project_name}}/modules`. These can be imported as `{{project_name}}.modules.<name>` and integrated into the CLI.
+
+
+Troubleshooting
+
+- If a Conda command fails, ensure Conda is initialized for your shell: `eval "$(conda shell.bash hook)"` or follow the instructions from your Conda distribution.
+- If `make init` does not activate the env automatically in your shell, activate manually: `conda activate {{project_name}}`.
+
+Contributing
+
+Contributions are welcome. Please open issues or PRs for fixes, documentation improvements, or new templates.
 
 License
 
-
 MIT
+
